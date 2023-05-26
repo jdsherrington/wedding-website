@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jordan & Justice</title>
+  </head>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="https://use.typekit.net/yjc7ggu.css" />
+  <body>
+    <header>
+      <div id="nav-area">
+        <div id="nav-title-area">
+          <a href="#hero-section" class="scroll-link">
+            <span id="jordan" class="nav-title prevent-select">Jordan </span>
+            <span id="ampersand" class="nav-title prevent-select">&</span>
+            <span id="justice" class="nav-title prevent-select"> Justice</span>
+          </a>
+        </div>
+        <div id="nav-link-area">
+          <a
+            href="#venue-section"
+            class="nav-link animated-link fromLeft prevent-select scroll-link"
+            >Venue
+          </a>
+          <a
+            href="#travel-section"
+            class="nav-link animated-link fromLeft prevent-select scroll-link"
+            >Travel
+          </a>
+          <a
+            href="#registry-section"
+            class="nav-link animated-link fromLeft prevent-select scroll-link"
+            >Registry
+          </a>
+        </div>
+        <div id="nav-link-area-mobile">
+          <button href="#venue-section" class="nav-button scroll-link">
+            Venue
+          </button>
+          <button href="#travel-section" class="nav-button scroll-link">
+            Travel
+          </button>
+          <button href="#registry-section" class="nav-button scroll-link">
+            Registry
+          </button>
+          <button href="#rsvp-section" class="nav-button scroll-link">
+            RSVP
+          </button>
+        </div>
+        <div id="nav-button-area">
+          <button
+            href="#rsvp-section"
+            class="nav-button"
+            onclick="scrollToRSVP()"
+          >
+            RSVP
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="header-space"></div>
+      <section id="hero-section">
+        <div class="content">
+          <div>
+            <p>
+              We joyfully request the pleasure of your company as we speak our
+              vows and join in marriage before God in the presence of our family
+              and friends.
+            </p>
+          </div>
+          <span class="separator"></span>
+          <div class="info-block">
+            <h3 class="prevent-select">Date</h3>
+            <h3 class="italic">Monday, December 4th 2023</h3>
+          </div>
+          <a href="#travel-section" class="scroll-link"
+            ><div class="info-block-link">
+              <h3 class="prevent-select">Location</h3>
+              <h3 class="italic">
+                Warrawong Estate, 1200 Exford Rd, Eynesbury VIC 3338
+              </h3>
+            </div>
+          </a>
+          <a href="#venue-menu-area" class="scroll-link"
+            ><div class="info-block-link">
+              <h3 class="prevent-select">Dining</h3>
+              <h3 class="italic">
+                Catered buffet dinner and dessert following the ceremony
+              </h3>
+            </div>
+          </a>
+          <div class="info-block">
+            <h3 class="prevent-select">Children</h3>
+            <h3 class="italic">Children are welcome!</h3>
+          </div>
+        </div>
+      </section>
+      <section id="venue-section">
+        <div class="content">
+          <!-- SWIPER -->
+          <div id="venue-img" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images\warrawong-estate-01.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images\warrawong-estate-02.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images\warrawong-estate-03.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images\warrawong-estate-04.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images\warrawong-estate-05.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="images\warrawong-estate-06.webp" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div id="venue-details">
+            <h1 class="prevent-interact">Warrawong Estate</h1>
+            <span id="venue-desc">
+              Join us at the historic Woolshed at Warrawong for an unforgettable
+              evening of good food and good company in celebration of the union
+              between Jordan and Justice.<br /><br />The Woolshed was originally
+              built in the 1850’s and is the perfect space for a formal seated
+              reception, with the ceremony being held between The Woolshed and
+              the Silos, overlooking Werribee River. For more information and
+              photos, please
+              <a
+                href="https://warrawongestate.com.au/home"
+                target="_blank"
+                class="inline-link inline-animated-link fromLeft"
+                >click here</a
+              >
+              to go to the venue's website.<br /><br />For dinner, we have
+              arranged a catered buffet with a range of delicious food, and the
+              full menu can be found below.<br /><br />Please note that the
+              reception will be a dry event, to fit with the more relaxed and
+              intimate atmosphere that we're seeking for our special day.
+            </span>
+            <div id="venue-menu-area">
+              <h2 class="venue-starter-menu">Starters</h2>
+              <ul class="venue-starter-menu">
+                <li>
+                  <span class="indicator vegetarian">V</span>
+                  Pumpkin Sage Arancini
+                </li>
+                <li>
+                  <span class="indicator vegan">VE</span>
+                  Vegan Quiches
+                </li>
+                <li>
+                  <span class="indicator vegetarian">V</span>
+                  Pakora Spicy Veg
+                </li>
+              </ul>
+              <h2 class="venue-main-menu item-3">Mains</h2>
+              <ul class="venue-main-menu">
+                <li>Massaman Beef Curry</li>
+                <li>Chicken Parmigiana</li>
+                <li>
+                  <span class="indicator vegetarian">V</span>
+                  Vegetarian Lasagna
+                </li>
+              </ul>
+              <h2 class="venue-sides-menu">Sides & Salads</h2>
+              <ul class="venue-sides-menu">
+                <li>
+                  <span class="indicator vegan">VE</span>
+                  Coconut Rice
+                </li>
+                <li>
+                  <span class="indicator vegan">VE</span>
+                  <span class="indicator dairy-free">DF</span>
+                  Roasted Vegetables
+                </li>
+                <li>
+                  <span class="indicator vegan">VE</span>
+                  Green Salad
+                </li>
+              </ul>
+              <h2 class="venue-sweets-menu">Desserts</h2>
+              <ul class="venue-sweets-menu">
+                <li>TBD</li>
+              </ul>
+            </div>
+            <div id="venue-dietary-legend">
+              <span>
+                <span class="indicator vegetarian">V</span>
+                <span class="dietary-title">Vegetarian</span>
+              </span>
+              <span>
+                <span class="indicator vegan">VE</span>
+                <span class="dietary-title">Vegan</span>
+              </span>
+              <span>
+                <span class="indicator gluten-free">GF</span>
+                <span class="dietary-title">Gluten Free</span>
+              </span>
+              <span>
+                <span class="indicator dairy-free">DF</span>
+                <span class="dietary-title">Dairy Free</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="travel-section">
+        <div class="content">
+          <div id="travel-img-area">
+            <div id="travel-img">
+              <iframe
+                class="map-embed map-top"
+                width="100%"
+                height="50%"
+                style="border: 0"
+                loading="lazy"
+                allowfullscreen
+                src="https://www.google.com/maps/embed/v1/view?zoom=15&center=-37.7500%2C144.5738&key=AIzaSyAnbccpohbyNo7FAx7bEAeJvGmbTQhmVIk"
+              ></iframe>
+              <iframe
+                class="map-embed"
+                width="100%"
+                height="50%"
+                style="border: 0"
+                loading="lazy"
+                allowfullscreen
+                src="https://www.google.com/maps/embed/v1/place?zoom=10&q=place_id:ChIJwbpeo0yS1moRk6nAkpAZIM0&key=AIzaSyAnbccpohbyNo7FAx7bEAeJvGmbTQhmVIk"
+              >
+              </iframe>
+            </div>
+          </div>
+          <div id="travel-details">
+            <h1 class="prevent-interact">Travel</h1>
+            <span class="travel-desc"
+              >Warrawong Estate is located in the town of Eynesbury, in
+              Victoria's western suburbs. The venue is approximately 44.5 km
+              driving distance from Melbourne CBD, about a 50 minute
+              drive.</span
+            >
+            <span class="travel-desc click-here-map-view"
+              ><br />
+              <a
+                href="https://goo.gl/maps/G593Jmhr8VTnPVA2A"
+                target="_blank"
+                class="inline-link inline-animated-link fromLeft"
+                >Click here</a
+              >
+              to view the venue location on Google Maps, or
+              <a
+                href="https://maps.apple.com/place?q=Warrawong+Estate&auid=8094915307670335482&address=1200+Exford+Rd%2C+Eynesbury+VIC+3338%2C+Australia&ll=-37.7499869%2C144.5738875"
+                target="_blank"
+                class="inline-link inline-animated-link fromLeft"
+                >here</a
+              >
+              for Apple Maps.</span
+            ><br />
+            <h1 class="prevent-interact">Accommodation</h1>
+            <span class="travel-desc"
+              >If you're traveling from interstate and require accommodation,
+              Warrawong Estate features 7 luxury glamping tents available for
+              $270 per night for 2 people, furnished with queen sized beds,
+              natural rugs, bedside tables, lanterns and a table & chair setting
+              for 2. For more details,
+              <a
+                href="https://warrawongestate.com.au/glamping"
+                target="_blank"
+                class="inline-link inline-animated-link fromLeft"
+                >click here</a
+              >.</span
+            >
+            <div class="travel-glamping-img prevent-interact">
+              <img class="left-img" src="images\warrawong-glamping-01.webp" />
+              <img src="images\warrawong-glamping-02.webp" />
+              <img class="right-img" src="images\warrawong-glamping-03.webp" />
+            </div>
+
+            <span class="travel-desc"
+              >Alternatively, there are multiple options for accommodation in
+              the nearby towns of Melton, Werribee, and Tarneit, for a variety
+              of different budgets and needs.</span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- REGISTRY SECTION TO BE ADDED -->
+      <section id="registry-section">
+        <div class="content">
+          <!-- SWIPER -->
+          <div id="registry-img" class="prevent-interact">
+            <img src="images\gift-registry.webp" />
+          </div>
+          <div id="registry-details">
+            <h1 class="prevent-interact">Gift Registry</h1>
+            <span class="registry-desc">
+              If you decide to bless us with a gift for the occasion, we have
+              set up an online gift registry with a variety of different options
+              for different budgets. We understand that not everyone is in the
+              position to give, and if that is the case please do not feel
+              pressured, but if you do decide to purchase something from our
+              registry then just know you have our immense gratitude and that it
+              really does mean a lot to us. We have provided a few different
+              options below:
+            </span>
+            <div id="registry-options">
+              <a
+                href="https://www.easyregistry.com.au/Registry/Gifts/jordanandjustice"
+                target="_blank"
+              >
+                <div class="gift-option">
+                  <img class="prevent-interact" src="images\price-tag.png" />
+                  <span class="prevent-select"
+                    >Pitch in with other guests towards buying a higher-priced
+                    gift</span
+                  >
+                </div>
+              </a>
+              <a
+                href="https://www.easyregistry.com.au/Registry/Gifts/jordanandjustice"
+                target="_blank"
+              >
+                <div class="gift-option">
+                  <img class="prevent-interact" src="images\gift.png" />
+                  <span class="prevent-select"
+                    >Purchase one or more gift items in full</span
+                  >
+                </div>
+              </a>
+              <a
+                href="https://www.easyregistry.com.au/Registry/Gifts/jordanandjustice"
+                target="_blank"
+              >
+                <div class="gift-option">
+                  <img class="prevent-interact" src="images\giving.png" />
+                  <span class="prevent-select"
+                    >Contribute as much as you like towards a cash gift</span
+                  >
+                </div>
+              </a>
+            </div>
+            <a
+              href="https://www.easyregistry.com.au/Registry/Gifts/jordanandjustice"
+              target="_blank"
+              ><button class="registry-btn">Go to registry website</button></a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="rsvp-section">
+        <div class="content">
+          <div id="rsvp-img-area" class="prevent-interact">
+            <img id="rsvp-img" src="images\rsvp.jpg" />
+          </div>
+          <div id="rsvp-details">
+            <h1 class="prevent-interact">RSVP</h1>
+            <span id="rsvp-desc" class="fade-on-submit"
+              >Please fill out the below form to let us know whether you're able
+              to attend. Feel free to put as many invited family member's names
+              in as you like in order to avoid the need for each individual to
+              RSVP.</span
+            >
+            <form class="vanish-on-submit" id="rsvp-form">
+              <br /><input
+                class="fade-on-submit"
+                type="hidden"
+                name="contact_number"
+              />
+              <label class="fade-on-submit" for="name"></label>
+              <input
+                class="fade-on-submit"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name/s"
+                required
+              /><br /><br />
+              <label class="fade-on-submit" for="email"></label>
+              <input
+                class="fade-on-submit"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              /><br /><br /><br />
+              <label class="fade-on-submit prevent-interact" for="attendance"
+                >Will you be attending?</label
+              ><br /><br />
+              <div class="fade-on-submit rsvp-attendance prevent-select">
+                <input
+                  type="radio"
+                  id="yes"
+                  name="attendance"
+                  value="Yes, I/we will be attending"
+                  onclick="togglePlusOne('yes')"
+                  required
+                />
+                <label for="yes">Yes</label>
+              </div>
+              <div class="fade-on-submit rsvp-attendance prevent-select">
+                <input
+                  type="radio"
+                  id="no"
+                  name="attendance"
+                  value="No, I/we will not be attending"
+                  onclick="togglePlusOne('no')"
+                  required
+                />
+                <label for="no">No</label>
+              </div>
+              <br /><br />
+
+              <div
+                class="fade-on-submit"
+                id="plusone-form"
+                style="display: none"
+              >
+                <label class="prevent-select prevent-interact" for="plusone"
+                  >Do you want to bring a plus-one?</label
+                ><br /><br />
+                <div class="rsvp-plusone prevent-select">
+                  <input
+                    type="radio"
+                    id="plusone-yes"
+                    name="plusone"
+                    value="Yes"
+                    onclick="togglePlusOneName('yes')"
+                  />
+                  <label for="plusone-yes">Yes</label>
+                </div>
+                <div class="rsvp-plusone prevent-select">
+                  <input
+                    type="radio"
+                    id="plusone-no"
+                    name="plusone"
+                    value="No"
+                    onclick="togglePlusOneName('no')"
+                  />
+                  <label for="plusone-no">No</label>
+                </div>
+                <br /><br />
+              </div>
+
+              <div
+                class="fade-on-submit"
+                id="plusonename-form"
+                style="display: none"
+              >
+                <label for="plusone-name"></label>
+                <input
+                  type="text"
+                  id="plusone-name"
+                  name="plusone-name"
+                  placeholder="What is their name?"
+                />
+                <br /><br /><br />
+              </div>
+              <br />
+              <div id="dietary-label">
+                <label class="fade-on-submit prevent-interact" for="dietary"
+                  >Do you have any special dietary requirements?</label
+                ><br /><br />
+                <input
+                  class="fade-on-submit"
+                  type="text"
+                  id="dietary"
+                  name="dietary"
+                  placeholder="Leave blank if none"
+                /><br /><br /><br />
+              </div>
+              <input class="fade-on-submit" type="submit" value="Submit" />
+              <div id="rsvp-loader"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
