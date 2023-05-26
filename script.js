@@ -89,12 +89,16 @@ function togglePlusOneName(value) {
     plusOneNameFormDiv.style.display = "block";
     yesRadio.checked = true;
     noRadio.checked = false;
+    document.getElementById("dietary-requirements-label").textContent =
+      "Do either of you have any special dietary requirements?";
     scrollToRSVP();
   } else {
     plusOneNameFormDiv.style.display = "none";
     plusOneNameForm.value = "";
     yesRadio.checked = false;
     noRadio.checked = true;
+    document.getElementById("dietary-requirements-label").textContent =
+      "Do you have any special dietary requirements?";
   }
 }
 
