@@ -14,7 +14,47 @@
   <link rel="stylesheet" href="https://use.typekit.net/yjc7ggu.css" />
   <body>
     <header>
-      <div id="nav-area">
+
+      <input type="checkbox" id="hamburger-input" class="burger-shower" />
+      <label id="hamburger-menu" for="hamburger-input">
+        <nav id="sidebar-menu">
+          <ul>
+            <li><a
+              href="#venue-section"
+              class="scroll-link"
+              >Venue
+              </a>
+            </li>
+            <li><a
+              href="#travel-section"
+              class="scroll-link"
+              >Travel
+              </a>
+            </li>
+            <li><a
+              href="#registry-section"
+              class="scroll-link"
+              >Registry
+              </a>
+            </li>
+            <li><a
+              href="#photos-section"
+              class="scroll-link"
+              >Photos
+              </a>
+            </li>
+            <li><a
+              href="#faq-section"
+              class="scroll-link"
+              >FAQ
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </label>
+      <label class="overlay" for="hamburger-input"></label>
+
+      <nav id="nav-area">
         <div id="nav-title-area">
           <a href="#hero-section" class="scroll-link">
             <span id="jordan" class="nav-title prevent-select">Jordan </span>
@@ -37,6 +77,16 @@
             href="#registry-section"
             class="nav-link animated-link fromLeft prevent-select scroll-link"
             >Registry
+          </a>
+          <a
+            href="#photos-section"
+            class="nav-link animated-link fromLeft prevent-select scroll-link"
+            >Photos
+          </a>
+          <a
+            href="#faq-section"
+            class="nav-link animated-link fromLeft prevent-select scroll-link"
+            >FAQ
           </a>
         </div>
         <div id="nav-link-area-mobile">
@@ -62,7 +112,7 @@
             RSVP
           </button>
         </div>
-      </div>
+      </nav>
     </header>
     <main>
       <div id="header-space"></div>
@@ -76,29 +126,50 @@
             </p>
           </div>
           <span class="separator"></span>
-          <div class="info-block">
-            <h3 class="prevent-select">Date</h3>
-            <h3 class="italic">Monday, December 4th 2023</h3>
-          </div>
-          <a href="#travel-section" class="scroll-link"
-            ><div class="info-block-link">
-              <h3 class="prevent-select">Location</h3>
-              <h3 class="italic">
-                Warrawong Estate, 1200 Exford Rd, Eynesbury VIC 3338
-              </h3>
+          <div id="info-blocks">
+            <div class="info-block">
+              <div class="info-block-title">
+                <img class="prevent-interact" src="images\calendar.png" />
+                <h3>When</h3>
+              </div>
+              <h3>3:30 p.m. Monday<br />December 4th 2023</h3>
+              <button class="info-block-btn" onclick="addToCalendar()">
+                Add to Calendar
+              </button>
             </div>
-          </a>
-          <a href="#venue-menu-area" class="scroll-link"
-            ><div class="info-block-link">
-              <h3 class="prevent-select">Dining</h3>
-              <h3 class="italic">
-                Catered buffet dinner and dessert following the ceremony
+            <div class="info-block">
+              <div class="info-block-title">
+                <img class="prevent-interact" src="images\location.png" />
+                <h3>Where</h3>
+              </div>
+              <h3>
+                Warrawong Estate<br />1200 Exford Rd<br />Eynesbury<br />VIC
+                3338
               </h3>
+              <button class="info-block-btn" onclick="redirectToMaps()">
+                View in Maps
+              </button>
             </div>
-          </a>
-          <div class="info-block">
-            <h3 class="prevent-select">Children</h3>
-            <h3 class="italic">Children are welcome!</h3>
+            <div class="info-block">
+              <div class="info-block-title">
+                <img class="prevent-interact" src="images\dinner.png" />
+                <h3>Dining</h3>
+              </div>
+              <h3>Catered buffet dinner and dessert following the ceremony</h3>
+              <button href="#venue-menu-area" class="info-block-btn scroll-link">
+                Menu
+              </button>
+            </div>
+            <div class="info-block">
+              <div class="info-block-title">
+                <img class="prevent-interact" src="images\baby.png" />
+                <h3>Children</h3>
+              </div>
+              <h3>Families and children are welcome!</h3>
+              <button href="#faq-section" class="info-block-btn scroll-link">
+                More FAQ
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -251,23 +322,10 @@
               driving distance from Melbourne CBD, about a 50 minute
               drive.</span
             >
-            <span class="travel-desc click-here-map-view"
-              ><br />
-              <a
-                href="https://goo.gl/maps/G593Jmhr8VTnPVA2A"
-                target="_blank"
-                class="inline-link inline-animated-link fromLeft"
-                >Click here</a
-              >
-              to view the venue location on Google Maps, or
-              <a
-                href="https://maps.apple.com/place?q=Warrawong+Estate&auid=8094915307670335482&address=1200+Exford+Rd%2C+Eynesbury+VIC+3338%2C+Australia&ll=-37.7499869%2C144.5738875"
-                target="_blank"
-                class="inline-link inline-animated-link fromLeft"
-                >here</a
-              >
-              for Apple Maps.</span
-            ><br />
+            <br>
+              <button class="map-btn click-here-map-view" onclick="redirectToMaps()">
+                View in Maps
+              </button>
             <h1 class="prevent-interact">Accommodation</h1>
             <span class="travel-desc"
               >If you're traveling from interstate and require accommodation,
@@ -296,7 +354,6 @@
           </div>
         </div>
       </section>
-      <!-- REGISTRY SECTION TO BE ADDED -->
       <section id="registry-section">
         <div class="content">
           <!-- SWIPER -->
@@ -316,10 +373,7 @@
               options below:
             </span>
             <div id="registry-options">
-              <a
-                href="https://www.easyregistry.com.au/Registry/Gifts/jordanandjustice"
-                target="_blank"
-              >
+              
                 <div class="gift-option">
                   <img class="prevent-interact" src="images\price-tag.png" />
                   <span class="prevent-select"
@@ -327,35 +381,70 @@
                     gift</span
                   >
                 </div>
-              </a>
-              <a
-                href="https://www.easyregistry.com.au/Registry/Gifts/jordanandjustice"
-                target="_blank"
-              >
+                <span>OR</span>
                 <div class="gift-option">
                   <img class="prevent-interact" src="images\gift.png" />
                   <span class="prevent-select"
                     >Purchase one or more gift items in full</span
                   >
                 </div>
-              </a>
-              <a
-                href="https://www.easyregistry.com.au/Registry/Gifts/jordanandjustice"
-                target="_blank"
-              >
+                <span>OR</span>
                 <div class="gift-option">
                   <img class="prevent-interact" src="images\giving.png" />
                   <span class="prevent-select"
                     >Contribute as much as you like towards a cash gift</span
                   >
                 </div>
-              </a>
+
             </div>
             <a
               href="https://www.easyregistry.com.au/Registry/Gifts/jordanandjustice"
               target="_blank"
-              ><button class="registry-btn">Go to registry website</button></a
+              ><button class="registry-btn">View wedding registry</button></a
             >
+          </div>
+        </div>
+      </section>
+      <section id="photos-section">
+        <div class="content">
+          <div id="photos-img-area">
+            <div id="photos-img">
+              
+
+            </div>
+          </div>
+          <div id="photos-details">
+            <h1 class="prevent-interact">Photos</h1>
+            <span class="photos-desc">
+              Warrawong Estate is located in the town of Eynesbury, in
+              Victoria's western suburbs. The venue is approximately 44.5 km
+              driving distance from Melbourne CBD, about a 50 minute
+              drive.</span>
+          </div>
+        </div>
+      </section>
+      <section id="faq-section">
+        <div class="content">
+          <div id="faq-img" class="prevent-interact">
+            
+          </div>
+          <div id="faq-details">
+            <h1 class="prevent-interact">FAQ</h1>
+            <span class="faq-desc">
+              <h3>What is the dress code?</h3>
+              <span>The dress code is semi-formal or smart casual. The fancier the better!</span>
+              <h3>Will alcohol be served on premise?</h3>
+              <span>The wedding reception will be a dry event to fit with the more relaxed and intimate atmosphere of the day, however we will be well-stocked with a wide range of beverages.</span>
+              <h3>Can I bring my children?</h3>
+              <span>Absolutely! We're also going to have a few different lawn games available at the venue, so there will be fun to be had for all ages.</span>
+              <h3>Is it okay to give cash instead of an item from the registry?</h3>
+              <span>We feel extraordinarily blessed for anything that anyone decides to gift us, our only desire is that you give whatever you feel led to give. Most of all we hope you'll gift us with your presence on our special day to celebrate with us!</span>
+              <h3>I have special dietary considerations, will there be options for me?</h3>
+              <span>Please include any dietary requirements as part of your RSVP below, this will allow us to communicate numbers to our caterers and make sure that everyone's needs are met. We won't let you go hungry!</span>
+              <h3>What's the best place to find photos of the wedding after the event?</h3>
+              <span>We will be updating this website to display all of the photos taken, until the website hosting expires early next year. However we will also endeavour to make as many photos publicly available through our social media feeds as well.</span>
+              
+            </span>
           </div>
         </div>
       </section>
@@ -429,7 +518,7 @@
                 style="display: none"
               >
                 <label class="prevent-select prevent-interact" for="plusone"
-                  >Do you want to bring a plus-one?</label
+                  >Do you wish to bring a plus-one?</label
                 ><br /><br />
                 <div class="rsvp-plusone prevent-select">
                   <input

@@ -42,6 +42,7 @@ links.forEach((link) => {
       top: targetPos,
       behavior: "smooth",
     });
+    document.getElementById("hamburger-input").checked = false;
   });
 });
 
@@ -75,6 +76,8 @@ function togglePlusOne(value) {
     noRadio.checked = true;
     yesPlusOneRadio.checked = false;
     noPlusOneRadio.checked = false;
+    document.getElementById("dietary-requirements-label").textContent =
+      "Do you have any special dietary requirements?";
   }
 }
 
@@ -179,4 +182,62 @@ function scrollToSection() {
     top: targetPos,
     behavior: "smooth",
   });
+}
+
+function redirectToMaps() {
+  var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  var isMac = /Mac/.test(navigator.platform);
+
+  if (iOS || isMac) {
+    // Open Apple Maps in a new tab
+    window.open(
+      "https://maps.apple.com/place?q=Warrawong+Estate&auid=8094915307670335482",
+      "_blank"
+    );
+  } else {
+    // Open Google Maps in a new tab or in the app
+    window.open("https://goo.gl/maps/819mBdswJzmYaN6Y7");
+  }
+}
+
+function generateCalendarFile() {
+  var event = {
+    title: "Jordan & Justice's Wedding",
+    description: "Wedding celebration for Jordan and Justice",
+    location: "Event Location",
+    start: new Date("2023-06-01T12:00:00Z"),
+    end: new Date("2023-06-01T14:00:00Z"),
+  };
+
+  var calendarData = generateICalendarData(event);
+
+  var calendarBlob = new Blob([calendarData], {
+    type: "text/calendar;charset=utf-8",
+  });
+  var calendarUrl = URL.createObjectURL(calendarBlob);
+
+  var downloadLink = document.createElement("a");
+  downloadLink.href = calendarUrl;
+  downloadLink.download = "event.ics";
+  downloadLink.click();
+}
+
+function addToCalendar() {
+  var eventData = encodeURIComponent(`BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20231204T153000Z
+DTEND:20231204T210000Z
+DTSTAMP:20230528T120000Z
+UID:1234567890
+SUMMARY:Jordan & Justice's Wedding
+DESCRIPTION:
+LOCATION:Warrawong Estate, 1200 Exford Rd, Eynesbury, VIC 3340
+END:VEVENT
+END:VCALENDAR`);
+
+  var calendarUrl = "data:text/calendar;charset=utf-8," + eventData;
+  window.open(calendarUrl);
 }
