@@ -149,7 +149,7 @@ summary,
 
 body {
   margin: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='8' result='NOISE'%3E%3C/feTurbulence%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='15%25'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.75' numOctaves='8' result='NOISE'%3E%3C/feTurbulence%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='17.5%25'/%3E%3C/svg%3E");
 
   background-color: var(--main-bg-color);
   opacity: 0;
@@ -174,6 +174,12 @@ body.loaded main p {
 button {
   color: var(--text-color);
 }
+
+html {
+  overflow-x: hidden;
+}
+
+
 
 #hamburger-input{
   display: none;
@@ -285,10 +291,11 @@ button {
   background-color: var(--secondary-bg-color);
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(1rem);
-
 }
 
-
+#hamburger-menu, .overlay {
+  display: none;
+}
 
 #nav-area {
   display: grid;
@@ -327,10 +334,12 @@ button {
   font-size: 6rem;
   font-family: "METROPOLIS";
   letter-spacing: 0.1rem;
+  
 }
 
 #jordan {
-  margin-right: -1rem;
+  margin-bottom: -1.7rem;
+  margin-right: -0.75rem;
   z-index: 2;
 }
 
@@ -341,6 +350,12 @@ button {
   line-height: 3.8rem;
   height: 35px;
   margin: 0rem 1rem 0rem 1rem;
+}
+
+#justice {
+  margin-bottom: -1.7rem;
+  margin-left: 0.5rem;
+  z-index: 2;
 }
 
 #nav-link-area {
@@ -389,7 +404,7 @@ button {
 
 .animated-link:after {
   display: block;
-  margin-top: -0.1em;
+  margin-top: 0.0em;
   content: "";
   border-bottom: 1px solid var(--transparent-color);
   transform: scaleX(0);
@@ -453,6 +468,7 @@ a.fromRight:hover:after {
 .nav-button:hover {
   background-color: var(--black-color);
   color: var(--main-bg-color);
+  border-radius: 0.5rem;
 }
 
 .nav-button:active {
@@ -601,6 +617,7 @@ main {
 .info-block-btn:hover {
   background-color: var(--black-color);
   color: var(--main-bg-color);
+  border-radius: 0.5rem;
 }
 
 .info-block-btn:active {
@@ -673,7 +690,7 @@ h1 {
 #photos-section h1 {
   margin-top: -2rem;
   margin-bottom: 2rem;
-  margin-left: -0.8rem;
+  margin-left: -0.35rem;
 }
 
 #photos-section h1:nth-of-type(2) {
@@ -1083,6 +1100,7 @@ h1 {
 .registry-btn:hover {
   background-color: var(--black-color);
   color: var(--main-bg-color);
+  border-radius: 0.5rem;
 }
 
 .registry-btn:active {
@@ -1248,6 +1266,8 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: var(--black-color);
   color: var(--main-bg-color);
+
+  border-radius: 0.5rem;
 }
 
 input[type="submit"]:active {
@@ -1386,11 +1406,26 @@ input[type="radio"] {
   }
 
   #header-space {
-    height: 17rem !important;
+    height: 80px !important;
+  }
+
+  #hamburger-menu, .overlay {
+    display: block;
   }
 
   #nav-area {
-    height: 17rem !important;
+    height: 80px !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+  }
+
+  #nav-title-area {
+    padding: 0;
+    justify-self: center;
+    align-self: center;
+    margin-top: 0.5rem;
+    margin-left: 2.5rem;
   }
 
   .nav-title {
@@ -1399,11 +1434,13 @@ input[type="radio"] {
     font-size: 3.5rem;
     font-family: "METROPOLIS";
     letter-spacing: 0.1rem;
+    
   }
 
-  .nav-title-area {
-    margin: 0;
-    padding: 0;
+  #jordan {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-right: -0.8rem;
   }
 
   #ampersand {
@@ -1415,44 +1452,18 @@ input[type="radio"] {
     margin: 0rem 0.75rem 0rem 1rem;
   }
 
+  #justice {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 0.05rem;
+  }
+
   #nav-link-area {
     display: none;
   }
 
-  #nav-link-area-mobile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-column: 1;
-    margin-bottom: 2rem;
-    margin-top: 1.5rem !important;
-    grid-gap: 1rem;
-    width: min(90%, 600px);
-    height: 8rem;
-  }
-
-  #nav-link-area-mobile > button {
-    font-size: 2.25rem;
-    padding: 0 !important;
-    transition: 0.3s all;
-    border: 1px black solid;
-    background-color: var(--transparent-color);
-    margin: auto;
-    width: 100%;
-    height: 100%;
-  }
-
-  #nav-link-area-mobile > button:hover {
-    background-color: var(--black-color);
-    color: var(--main-bg-color);
-  }
-
-  #nav-area {
-    grid-template-columns: 1fr;
-  }
-
   #nav-button-area {
-    display: none;
+    margin-right: 40px;
   }
 
   #hero-section {
@@ -1466,67 +1477,28 @@ input[type="radio"] {
     grid-gap: 1rem;
   }
   
-  .info-block {
-    width: 100%;
-    display: grid;
-    height: min(100%, 60rem);
-    grid-template-rows: auto 1fr auto;
-    background-color: var(--tertiary-bg-color-hover);
-    font-family: "miller-text";
-    justify-items: center;
-    align-items: center;
-    border-radius: 1rem;
-    text-align: center;
-    font-style: normal;
-    letter-spacing: -0.05rem;
-    color: var(--text-color);
-    padding: 2rem 2rem;
-    transition: 0.5s all;
-  }
-  
-  .info-block-title {
-    display: grid;
-    grid-template-rows: auto auto;
-    justify-items: center;
-    align-items: center;
-  }
-  
-  .info-block-title img {
-    align-self: center;
-    justify-self: center;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    width: 35%;
-    filter: invert(1) brightness(30%) sepia(100%);
-  }
-  
-  .info-block-title > h3 {
-    font-family: "inglesa-caps-variable";
-    font-weight: 400;
-    font-size: 3rem;
-    margin-top: -0.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .info-block > h3 {
-    font-family: "miller-text", serif;
-    font-weight: 400;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    font-size: 1.75rem;
-    line-height: 1.5;
-  }
-  
-  .info-block-btn {
-    font-family: "inglesa-caps-variable";
+  #hero-section p {
     font-size: 2.25rem;
-    padding: 1rem 0rem;
-    width: 100%;
-    transition: 0.3s all;
-    border: 1px black solid;
-    background-color: var(--transparent-color);
-    margin-top: 5rem;
+  }
+
+  .info-block > h3 {
+    font-size: 2.25rem;
+    justify-self: center;
+    margin: 0;
+    padding: 2rem 0rem;
+  }
+
+  .info-block-title > h3 {
+    font-size: 3.5rem;
+    justify-self: center;
+    margin: 0;
+  }
+
+  .info-block > button {
+    font-size: 2.75rem;
+    justify-self: center;
+    margin-top: 2rem;
+    padding: 1rem 0.5rem;
   }
 
   #venue-section {
@@ -1921,34 +1893,55 @@ input[type="radio"] {
   }
 }
 
-@media (max-width: 915px) {
-  #hero-section p {
-    font-size: 2.25rem;
-  }
-
-  .info-block > h3 {
-    font-size: 2.25rem;
-    justify-self: center;
-    margin: 0;
-    padding: 2rem 0rem;
-  }
-
-  .info-block-title > h3 {
-    font-size: 3.5rem;
-    justify-self: center;
-    margin: 0;
-  }
-
-  .info-block > button {
-    font-size: 2.75rem;
-    justify-self: center;
-    margin-top: 2rem;
-    padding: 1rem 0.5rem;
+@media (max-width: 750px) {
+  #nav-title-area {
+    justify-self: start;
+    margin-right: 0rem;
+    margin-left: 35px;
   }
 }
 
 @media (max-width: 550px) {
+  
   #travel-section h1 {
     font-size: 3.75rem !important;
   }
+
+  #nav-title-area {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-column: 1;
+    grid-row: 1/3;
+    margin-left: 25px;
+    margin-bottom: 0.35rem;
+    margin-right: 0rem;
+    justify-self: start;
+  }
+
+  #nav-title-area > a {
+    display: grid;
+    justify-items: center;
+  }
+
+  #jordan {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  #ampersand {
+    font-size: 4.25rem;
+    margin-top: -1.6rem;
+    margin-bottom: -1.75rem;
+    padding: 0;
+    color: rgba(64, 58, 45, 0.5);
+
+  }
+
+  #justice {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+
 }
