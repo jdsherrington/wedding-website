@@ -1760,11 +1760,6 @@ input[type="radio"] {
     justify-content: start;
   }
 
-  #nav-title-area {
-    margin-right: 0rem;
-    margin-left: 10px;
-  }
-
   #registry-options {
     grid-template-rows: 1fr auto 1fr auto 1fr;
     grid-template-columns: auto;
