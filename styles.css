@@ -93,7 +93,7 @@ html {
   text-size-adjust: none; /* for other mobile browsers */
 }
 
-*/ .prevent-select {
+.prevent-select {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -180,7 +180,7 @@ html {
   overflow-x: hidden;
 }
 
-
+/* Start - Hamburger Menu Settings */
 
 #hamburger-input{
   display: none;
@@ -302,6 +302,10 @@ html {
   display: none;
 }
 
+/* End - Hamburger Menu Settings */
+
+/* Start - Header Nav Area Settings */
+
 #nav-area {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -339,7 +343,6 @@ html {
   font-size: 6rem;
   font-family: "METROPOLIS";
   letter-spacing: 0.1rem;
-  
 }
 
 #jordan {
@@ -485,6 +488,14 @@ a.fromRight:hover:after {
   width: 100%;
 }
 
+/* End - Header Nav Area Settings */
+
+/* Start - Hero Area Settings */
+
+main {
+  display: grid;
+}
+
 #hero-section {
   height: max(70rem, 60vh);
   width: 100%;
@@ -516,10 +527,6 @@ a.fromRight:hover:after {
   margin: auto;
   margin-bottom: 6rem;
   line-height: 1.5;
-}
-
-main {
-  display: grid;
 }
 
 #hero-section .content {
@@ -639,66 +646,65 @@ h1 {
   color: var(--text-color);
 }
 
-#venue-section {
+.section-area {
   width: 100%;
-  background-color: var(--tertiary-bg-color);
-  min-height: calc(100vh - 20%);
+  min-height: calc(100vh - var(--header-height));
 }
 
-#venue-section .content {
+.section-area .content {
   display: grid;
+}
+
+#rsvp-section .section-details {
+  margin-bottom: 0rem;
+}
+
+.left {
+  background-color: var(--tertiary-bg-color);
+}
+
+.right {
+  background-color: inherit;
+}
+
+.left .content {
   grid-template-columns: 60% 40%;
 }
 
-#venue-img {
-  top: var(--header-height);
-  transition: 1s all;
-  height: calc(100vh - var(--header-height));
-  object-fit: cover;
+.right .content {
+  grid-template-columns: 40% 60%;
 }
 
-#venue-section h1 {
+.section-img {
+  position: sticky;
+  top: var(--header-height) !important;
+  transition: 1s all;
+  height: calc(100vh - var(--header-height)) !important;
+  object-fit: cover !important;
+}
+
+#registry-img {
+  filter: contrast(50%) brightness(130%) sepia(25%);
+}
+
+#rsvp-img {
+  filter: contrast(80%) brightness(130%) sepia(20%);
+}
+
+.section-area h1 {
   width: 100%;
   margin-top: -2rem;
   margin-bottom: 2rem;
   margin-right: -0.6rem;
-}
-
-#travel-section {
-  min-height: calc(100vh - var(--header-height));
-}
-
-#travel-section .content {
-  display: grid;
-  grid-template-columns: 40% 60%;
+  margin-left: 0rem;
 }
 
 #travel-section h1 {
-  margin-top: -2rem;
-  margin-bottom: 2rem;
+  margin-right: 0rem;
   margin-left: -0.8rem;
 }
 
 #travel-section h1:nth-of-type(2) {
-  margin-top: 7rem;
-}
-
-#photos-section {
-  min-height: calc(100vh - var(--header-height));
-}
-
-#photos-section .content {
-  display: grid;
-  grid-template-columns: 40% 60%;
-}
-
-#photos-section h1 {
-  margin-top: -2rem;
-  margin-bottom: 2rem;
-  margin-left: -0.35rem;
-}
-
-#photos-section h1:nth-of-type(2) {
   margin-top: 7rem;
 }
 
@@ -713,67 +719,62 @@ h1 {
   margin-right: -0.75rem;
 }
 
-#registry-section .content {
-  display: grid;
-  grid-template-columns: 60% 40%;
-}
-
-#registry-img {
-  position: sticky;
-  top: var(--header-height);
-  transition: 1s all;
-  height: calc(100vh - var(--header-height));
-  object-fit: cover;
-  width: 100%;
-  filter: contrast(50%) brightness(130%) sepia(25%);
-}
-
-#registry-img img {
-  position: sticky;
-  top: var(--header-height);
-  transition: 1s all;
-  height: 100%;
-  object-fit: cover;
-}
-
-#faq-section {
-  background-color: var(--tertiary-bg-color);
-  min-height: calc(100vh - var(--header-height));
+#photos-section h1 {
+  margin-right: 0rem;
+  margin-left: -0.35rem;
 }
 
 #faq-section h1 {
-  margin-top: -2rem;
-  margin-bottom: 2rem;
   margin-right: -0.75rem;
-}
-
-#faq-section .content {
-  display: grid;
-  grid-template-columns: 60% 40%;
-}
-
-#faq-img {
-  position: sticky;
-  top: var(--header-height);
-  transition: 1s all;
-  height: calc(100vh - var(--header-height));
-  object-fit: cover;
-  width: 100%;
-  filter: contrast(50%) brightness(130%) sepia(25%);
-}
-
-#faq-img img {
-  position: sticky;
-  top: var(--header-height);
-  transition: 1s all;
-  height: 100%;
-  object-fit: cover;
+  margin-left: 0rem;
 }
 
 #rsvp-section h1 {
-  margin-top: -2rem;
-  margin-bottom: 2rem;
   margin-left: -0.4rem;
+  margin-right: 0rem;
+}
+
+.left .section-details {
+  display: grid;
+  align-content: start;
+  justify-items: end;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  text-align: right;
+  padding: 10rem 10rem;
+  margin-bottom: 0rem;
+}
+
+.left .section-desc {
+  font-family: "miller-text", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 1.75;
+  color: var(--text-color);
+  margin: 1.5rem 0 0 0;
+  padding-left: 20%;
+}
+
+.right .section-details  {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  padding: 10rem 10rem;
+  margin-bottom: 15rem;
+}
+
+.right .section-desc {
+  display: inline-block;
+  font-family: "miller-text", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 2;
+  color: var(--text-color);
+  margin: 1.5rem 0 0rem 0;
+  padding-right: 20%;
 }
 
 .swiper {
@@ -803,29 +804,6 @@ h1 {
 .swiper-button-next {
   color: var(--main-bg-color) !important;
   margin: 0 2rem;
-}
-
-#venue-details {
-  display: grid;
-  align-content: start;
-  justify-items: end;
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-  text-align: right;
-  padding: 10rem 10rem;
-  margin-bottom: 0rem;
-}
-
-#venue-desc {
-  font-family: "miller-text", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  line-height: 1.75;
-  color: var(--text-color);
-  margin: 1.5rem 0 0 0;
-  padding-left: 20%;
 }
 
 #venue-menu-area {
@@ -931,39 +909,6 @@ h1 {
   font-style: italic;
 }
 
-#travel-img-area {
-  height: 100%;
-}
-
-#travel-img {
-  position: sticky;
-  top: var(--header-height);
-  transition: 1s all;
-  height: calc(100vh - var(--header-height));
-  object-fit: cover;
-  width: 100%;
-}
-
-#travel-details {
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0;
-  padding: 10rem 10rem;
-  margin-bottom: 15rem;
-}
-
-.travel-desc {
-  display: inline-block;
-  font-family: "miller-text", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  line-height: 2;
-  color: var(--text-color);
-  margin: 1.5rem 0 0rem 0;
-  padding-right: 20%;
-}
-
 .click-here-map-view {
   display: none;
   text-align: center;
@@ -1005,37 +950,12 @@ h1 {
   height: 25rem;
 }
 
-.left-img {
-  border-radius: 1rem 0 0 1rem;
+.glamping-left-img {
+  border-radius: 0.75rem 0 0 0.75rem;
 }
 
-.right-img {
-  border-radius: 0 1rem 1rem 0;
-}
-
-#registry-details {
-  display: grid;
-  align-content: start;
-  justify-items: end;
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-  text-align: right;
-  padding: 10rem 10rem;
-  margin-bottom: 15rem;
-}
-
-.registry-desc {
-  display: inline-block;
-  text-align: right;
-  font-family: "miller-text", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  line-height: 2;
-  color: var(--text-color);
-  margin: 1.5rem 0 0 0;
-  padding-left: 20%;
+.glamping-right-img {
+  border-radius: 0 0.75rem 0.75rem 0;
 }
 
 #registry-options {
@@ -1078,11 +998,10 @@ h1 {
   transition: 0.5s all;
 }
 
-
 .gift-option img {
   align-self: center;
   margin: 2rem;
-  width: 50%;
+  width: 25%;
   filter: brightness(30%) sepia(100%);
 }
 
@@ -1112,118 +1031,20 @@ h1 {
   transform: scale(0.95);
 }
 
-#photos-img-area {
-  height: 100%;
-}
-
-#photos-img {
-  position: sticky;
-  top: var(--header-height);
-  transition: 1s all;
-  height: calc(100vh - var(--header-height));
-  object-fit: cover;
-  width: 100%;
-}
-
-#photos-details {
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0;
-  padding: 10rem 10rem;
-  margin-bottom: 15rem;
-}
-
-.photos-desc {
-  display: inline-block;
-  font-family: "miller-text", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  line-height: 2;
-  color: var(--text-color);
-  margin: 1.5rem 0 0rem 0;
-  padding-right: 20%;
-}
-
-#faq-details {
-  display: grid;
-  align-content: start;
-  justify-items: end;
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
-  text-align: right;
-  padding: 10rem 10rem;
-  margin-bottom: 15rem;
-}
-
-.faq-desc {
-  display: inline-block;
-  text-align: right;
-  font-family: "miller-text", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  line-height: 2;
-  color: var(--text-color);
-  margin: 1.5rem 0 0 0;
-  padding-left: 20%;
-}
-
-.faq-desc > h3 {
+#faq-section .section-desc > h3 {
   display: block;
-  font-size: 2.2rem;
+  font-style: italic;
+  font-size: 2.25rem;
   margin-bottom: 1rem;
 }
 
-.faq-desc > span {
+#faq-section .section-desc > span {
   display: block;
   margin-bottom: 5rem;
 }
 
-#rsvp-section {
-  width: 100%;
-  min-height: calc(100vh - var(--header-height));
-}
-
-#rsvp-section .content {
-  display: grid;
-  grid-template-columns: 40% 60%;
-}
-
-#rsvp-img-area {
-  height: 100%;
-}
-
-#rsvp-img {
-  position: sticky;
-  top: var(--header-height);
-  transition: 1s all;
-  height: calc(100vh - var(--header-height) + 1px);
-  object-fit: cover;
-  width: 100%;
-  filter: contrast(80%) brightness(130%) sepia(20%);
-}
-
-#rsvp-details {
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0;
-  padding: 10rem 10rem;
-  padding-bottom: 20rem;
-}
-
-#rsvp-desc {
-  display: inline-block;
-  text-align: left;
-  font-family: "miller-text", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  line-height: 2;
-  color: var(--text-color);
-  margin: 1.5rem 0rem 2.5rem 0;
-  padding-right: 20%;
+#rsvp-form {
+  margin-top: 3.5rem;
 }
 
 label {
@@ -1238,7 +1059,7 @@ input[type="email"] {
   background-color: var(--tertiary-bg-color-hover);
   color: var(--text-color);
   padding: 1.5rem;
-  margin: 0rem 0;
+  margin: 0;
   margin-bottom: 0rem;
   border-radius: 1rem;
   font-family: "miller-text", serif;
@@ -1477,7 +1298,7 @@ input[type="radio"] {
 
   #nav-button-area button {
     font-size: 2.5rem;
-    padding: 1rem 2rem;
+    padding: 1.25rem 2rem;
   }
 
   #nav-button-area button:active {
@@ -1931,13 +1752,13 @@ input[type="radio"] {
   }
 
   #hamburger-menu {
-    right: 22px;
+    right: 25px;
   }
 
   #nav-button-area {
     padding: 0;
     margin-right: 0rem;
-    margin-left: 22px;
+    margin-left: 25px;
     justify-self: start;
     grid-column: 1;
     justify-content: start;

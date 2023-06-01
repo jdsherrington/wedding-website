@@ -21,37 +21,37 @@
             
             <a
               href="#venue-section"
-              class="scroll-link"
+              class="scroll-link prevent-select"
               ><li>Venue</li>
               </a>
             
             <a
               href="#travel-section"
-              class="scroll-link"
+              class="scroll-link prevent-select"
               ><li>Travel</li>
               </a>
             
             <a
               href="#registry-section"
-              class="scroll-link"
+              class="scroll-link prevent-select"
               ><li>Registry</li>
               </a>
             
             <a
               href="#photos-section"
-              class="scroll-link"
+              class="scroll-link prevent-select"
               ><li>Photos</li>
               </a>
             
             <a
               href="#faq-section"
-              class="scroll-link"
+              class="scroll-link prevent-select"
               ><li>FAQ</li>
               </a>
           </ul>
         </nav>
       </label>
-      <label class="overlay" for="hamburger-input"></label>
+      <label class="overlay prevent-select" for="hamburger-input"></label>
 
       <nav id="nav-area">
         <div id="nav-title-area">
@@ -93,7 +93,7 @@
           <button
             href="#rsvp-section"
             class="nav-button"
-            onclick="scrollToRSVP()"
+            onclick="scrollToSection()"
           >
             RSVP
           </button>
@@ -159,10 +159,10 @@
           </div>
         </div>
       </section>
-      <section id="venue-section" class="section-area">
+      <section id="venue-section" class="section-area left">
         <div class="content">
           <!-- SWIPER -->
-          <div id="venue-img" class="swiper mySwiper">
+          <div id="venue-img" class="section-img swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img src="images\warrawong-estate-01.webp" />
@@ -186,9 +186,9 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
-          <div id="venue-details">
+          <div id="venue-details" class="section-details">
             <h1 class="prevent-interact">Warrawong Estate</h1>
-            <span id="venue-desc">
+            <span class="section-desc">
               Join us at the historic Woolshed at Warrawong for an unforgettable
               evening of good food and good company in celebration of the union
               between Jordan and Justice.<br><br>The Woolshed was originally
@@ -275,10 +275,10 @@
           </div>
         </div>
       </section>
-      <section id="travel-section" class="section-area">
+      <section id="travel-section" class="section-area right">
         <div class="content">
           <div id="travel-img-area">
-            <div id="travel-img">
+            <div id="travel-img" class="section-img">
               <iframe
                 class="map-embed map-top"
                 width="100%"
@@ -300,9 +300,9 @@
               </iframe>
             </div>
           </div>
-          <div id="travel-details">
+          <div id="travel-details" class="section-details">
             <h1 class="prevent-interact">Travel</h1>
-            <span class="travel-desc"
+            <span class="section-desc"
               >Warrawong Estate is located in the town of Eynesbury, in
               Victoria's western suburbs. The venue is approximately 44.5 km
               driving distance from Melbourne CBD, about a 50 minute
@@ -313,7 +313,7 @@
                 View in Maps
               </button>
             <h1 class="prevent-interact">Accommodation</h1>
-            <span class="travel-desc"
+            <span class="section-desc"
               >If you're traveling from interstate and require accommodation,
               Warrawong Estate features 7 luxury glamping tents available for
               $270 per night for 2 people, furnished with queen sized beds,
@@ -327,12 +327,12 @@
               >.</span
             >
             <div class="travel-glamping-img prevent-interact">
-              <img class="left-img" src="images\warrawong-glamping-01.webp" />
+              <img class="glamping-left-img" src="images\warrawong-glamping-01.webp" />
               <img src="images\warrawong-glamping-02.webp" />
-              <img class="right-img" src="images\warrawong-glamping-03.webp" />
+              <img class="glamping-right-img" src="images\warrawong-glamping-03.webp" />
             </div>
 
-            <span class="travel-desc"
+            <span class="section-desc"
               >Alternatively, there are multiple options for accommodation in
               the nearby towns of Melton, Werribee, and Tarneit, for a variety
               of different budgets and needs.</span
@@ -340,15 +340,15 @@
           </div>
         </div>
       </section>
-      <section id="registry-section" class="section-area">
+      <section id="registry-section" class="section-area left">
         <div class="content">
           <!-- SWIPER -->
           <div id="registry-img" class="prevent-interact">
-            <img src="images\gift-registry.webp" />
+            <img class="section-img" src="images\gift-registry.webp" />
           </div>
-          <div id="registry-details">
+          <div id="registry-details" class="section-details">
             <h1 class="prevent-interact">Gift Registry</h1>
-            <span class="registry-desc">
+            <span class="section-desc">
               If you decide to bless us with a gift for the occasion, we have
               set up an online gift registry with a variety of different options
               for different budgets. We understand that not everyone is in the
@@ -391,17 +391,17 @@
           </div>
         </div>
       </section>
-      <section id="photos-section" class="section-area">
+      <section id="photos-section" class="section-area right">
         <div class="content">
           <div id="photos-img-area">
-            <div id="photos-img">
+            <div id="photos-img" class="section-img">
               
 
             </div>
           </div>
-          <div id="photos-details">
+          <div class="section-details">
             <h1 class="prevent-interact">Photos</h1>
-            <span class="photos-desc">
+            <span class="section-desc">
               Warrawong Estate is located in the town of Eynesbury, in
               Victoria's western suburbs. The venue is approximately 44.5 km
               driving distance from Melbourne CBD, about a 50 minute
@@ -409,14 +409,14 @@
           </div>
         </div>
       </section>
-      <section id="faq-section" class="section-area">
+      <section id="faq-section" class="section-area left">
         <div class="content">
-          <div id="faq-img" class="prevent-interact">
+          <div id="faq-img" class="section-img prevent-interact">
             
           </div>
-          <div id="faq-details">
+          <div class="section-details">
             <h1 class="prevent-interact">FAQ</h1>
-            <span class="faq-desc">
+            <span class="section-desc">
               <h3>What is the dress code?</h3>
               <span>The dress code is semi-formal or smart casual. The fancier the better!</span>
               <h3>Will alcohol be served on premise?</h3>
@@ -434,21 +434,21 @@
           </div>
         </div>
       </section>
-      <section id="rsvp-section" class="section-area">
+      <section id="rsvp-section" class="section-area right">
         <div class="content">
           <div id="rsvp-img-area" class="prevent-interact">
-            <img id="rsvp-img" src="images\rsvp.jpg" />
+            <img id="rsvp-img" class="section-img" src="images\rsvp.jpg" />
           </div>
-          <div id="rsvp-details">
+          <div class="section-details">
             <h1 class="prevent-interact">RSVP</h1>
-            <span id="rsvp-desc" class="fade-on-submit"
+            <span id="rsvp-desc" class="section-desc fade-on-submit"
               >Please fill out the below form to let us know whether you're able
               to attend. Feel free to put as many invited family member's names
               in as you like in order to avoid the need for each individual to
               RSVP.</span
             >
             <form class="vanish-on-submit" id="rsvp-form">
-              <br /><input
+              <input
                 class="fade-on-submit"
                 type="hidden"
                 name="contact_number"
