@@ -7,7 +7,8 @@
   --link-color: rgba(107, 83, 55, 0.6);
   --active-color: rgba(0, 0, 0, 0.5);
   --transparent-color: rgba(64, 58, 45, 0);
-  --black-color: rgba(64, 58, 45);
+  --dark-color: rgba(64, 58, 45);
+  --button-color: rgb(233, 228, 221);
   --error-color: rgba(200, 0, 0);
   --test-color: green;
 
@@ -189,25 +190,25 @@ html {
   position: fixed;
   z-index: 10;
   top: 28px;
-  right: 22px;
+  right: 30px;
   width: 30px;
-  height: 24px;
+  height: 22px;
   display: none;
   border: none;
   padding: 0px;
   margin: 0px;
   background: linear-gradient(
     to bottom,
-    var(--black-color),
-    var(--black-color) 15%,
-    var(--transparent-color) 15%,
-    var(--transparent-color) 42.5%,
-    var(--black-color) 42.5%,
-    var(--black-color) 57.5%,
-    var(--transparent-color) 57.5%,
-    var(--transparent-color) 85%,
-    var(--black-color) 85%,
-    var(--black-color) 100%
+    var(--dark-color),
+    var(--dark-color) 10%,
+    var(--transparent-color) 10%,
+    var(--transparent-color) 45%,
+    var(--dark-color) 45%,
+    var(--dark-color) 55%,
+    var(--transparent-color) 55%,
+    var(--transparent-color) 90%,
+    var(--dark-color) 90%,
+    var(--dark-color) 100%
   );
 }
 
@@ -218,7 +219,7 @@ html {
   right: -275px;
   width: 225px;
   height: 100%;
-  background-color: var(--black-color);
+  background-color: var(--dark-color);
   transition: 0.3s;
   padding: 0;
   box-sizing: border-box;
@@ -237,11 +238,15 @@ html {
   line-height: 5rem;
   cursor: pointer;
   margin-left: 0rem;
-  padding: 1rem 0rem 1rem 2rem;
+  padding: 2rem 0rem 1.75rem 2.5rem;
   transition: background-color 0.25s;
 }
 
-#hamburger-menu li:not(:last-child)::after {
+#hamburger-menu a {
+  position: relative;
+}
+
+#hamburger-menu a:not(:last-child)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -466,7 +471,7 @@ a.fromRight:hover:after {
 }
 
 .nav-button:hover {
-  background-color: var(--black-color);
+  background-color: var(--dark-color);
   color: var(--main-bg-color);
   border-radius: 0.5rem;
 }
@@ -482,7 +487,7 @@ a.fromRight:hover:after {
 
 #hero-section {
   height: max(70rem, 60vh);
-  width: 100vw;
+  width: 100%;
 }
 
 #hero-section .content {
@@ -615,13 +620,13 @@ main {
 }
 
 .info-block-btn:hover {
-  background-color: var(--black-color);
+  background-color: var(--dark-color);
   color: var(--main-bg-color);
   border-radius: 0.5rem;
 }
 
 .info-block-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.97);
 }
 
 h1 {
@@ -635,7 +640,7 @@ h1 {
 }
 
 #venue-section {
-  width: 100vw;
+  width: 100%;
   background-color: var(--tertiary-bg-color);
   min-height: calc(100vh - 20%);
 }
@@ -1098,7 +1103,7 @@ h1 {
 }
 
 .registry-btn:hover {
-  background-color: var(--black-color);
+  background-color: var(--dark-color);
   color: var(--main-bg-color);
   border-radius: 0.5rem;
 }
@@ -1177,7 +1182,7 @@ h1 {
 }
 
 #rsvp-section {
-  width: 100vw;
+  width: 100%;
   min-height: calc(100vh - var(--header-height));
 }
 
@@ -1264,7 +1269,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: var(--black-color);
+  background-color: var(--dark-color);
   color: var(--main-bg-color);
 
   border-radius: 0.5rem;
@@ -1415,7 +1420,7 @@ input[type="radio"] {
 
   #nav-area {
     height: 80px !important;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 
   }
@@ -1425,7 +1430,6 @@ input[type="radio"] {
     justify-self: center;
     align-self: center;
     margin-top: 0.5rem;
-    margin-left: 2.5rem;
   }
 
   .nav-title {
@@ -1434,7 +1438,6 @@ input[type="radio"] {
     font-size: 3.5rem;
     font-family: "METROPOLIS";
     letter-spacing: 0.1rem;
-    
   }
 
   #jordan {
@@ -1462,8 +1465,23 @@ input[type="radio"] {
     display: none;
   }
 
+
   #nav-button-area {
-    margin-right: 40px;
+    grid-column: 1;
+    padding: 0;
+    justify-self: start;
+    justify-content: start;
+    margin-right: 0px;
+    margin-left: 30px;
+  }
+
+  #nav-button-area button {
+    font-size: 2.5rem;
+    padding: 1rem 2rem;
+  }
+
+  #nav-button-area button:active {
+    transform: scale(1);
   }
 
   #hero-section {
@@ -1495,14 +1513,21 @@ input[type="radio"] {
   }
 
   .info-block > button {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     justify-self: center;
     margin-top: 2rem;
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 0.5rem;
+    border-radius: 0.75rem;
+    border: 0;
+    background-color: var(--button-color);
+  }
+
+  .info-block > button:hover {
+    border-radius: 0.75rem;
   }
 
   #venue-section {
-    width: 100vw;
+    width: 100%;
     background-color: var(--tertiary-bg-color);
     min-height: auto !important;
     height: auto !important;
@@ -1510,14 +1535,14 @@ input[type="radio"] {
   }
 
   #travel-section {
-    width: 100vw;
+    width: 100%;
     min-height: auto !important;
     height: auto !important;
     padding-bottom: 4rem;
   }
 
   #registry-section {
-    width: 100vw;
+    width: 100%;
     background-color: var(--tertiary-bg-color);
     min-height: auto !important;
     height: auto !important;
@@ -1525,14 +1550,14 @@ input[type="radio"] {
   }
 
   #photos-section {
-    width: 100vw;
+    width: 100%;
     min-height: auto !important;
     height: auto !important;
     padding-bottom: 4rem;
   }
 
   #faq-section {
-    width: 100vw;
+    width: 100%;
     background-color: var(--tertiary-bg-color);
     min-height: auto !important;
     height: auto !important;
@@ -1540,7 +1565,7 @@ input[type="radio"] {
   }
 
   #rsvp-section {
-    width: 100vw;
+    width: 100%;
     min-height: auto !important;
     height: auto !important;
   }
@@ -1574,7 +1599,7 @@ input[type="radio"] {
 
   #venue-section h1 {
     width: 100%;
-    margin-top: 0 !important;
+    margin-top: 1rem !important;
     margin-bottom: 1rem !important;
     margin-right: 0 !important;
     text-align: center;
@@ -1891,18 +1916,49 @@ input[type="radio"] {
     top: 50%;
     margin-top: -2.5rem;
   }
+
+  .info-block-title img {
+    width: 30%;
+  }
 }
 
 @media (max-width: 750px) {
-  #nav-title-area {
-    justify-self: start;
+
+  .info-block-title img {
+    width: 17.5%;
+    
+    margin: 1.5rem;
+  }
+
+  #hamburger-menu {
+    right: 22px;
+  }
+
+  #nav-button-area {
+    padding: 0;
     margin-right: 0rem;
-    margin-left: 35px;
+    margin-left: 22px;
+    justify-self: start;
+    grid-column: 1;
+    justify-content: start;
+  }
+
+  #nav-title-area {
+
+    margin-right: 0rem;
+    margin-left: 10px;
   }
 }
 
 @media (max-width: 550px) {
+  .info-block-title > h3 {
+    font-size: 3rem;
+  }
   
+  .info-block > h3 {
+    font-size: 2rem;
+  }
+ 
   #travel-section h1 {
     font-size: 3.75rem !important;
   }
@@ -1910,12 +1966,9 @@ input[type="radio"] {
   #nav-title-area {
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
-    grid-column: 1;
     grid-row: 1/3;
-    margin-left: 25px;
     margin-bottom: 0.35rem;
-    margin-right: 0rem;
-    justify-self: start;
+    margin-right: 0.6rem;
   }
 
   #nav-title-area > a {
@@ -1935,7 +1988,6 @@ input[type="radio"] {
     margin-bottom: -1.75rem;
     padding: 0;
     color: rgba(64, 58, 45, 0.5);
-
   }
 
   #justice {
