@@ -1313,7 +1313,8 @@ input[type="radio"] {
   #info-blocks {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 1.5rem;
+    margin: 0rem 0.5rem;
   }
   
   #hero-section p {
