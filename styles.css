@@ -1606,20 +1606,8 @@ input[type="radio"] {
 
   #registry-options {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto 1fr auto 1fr;
-    width: min(70%, 30rem);
-    grid-gap: 3rem;
-    margin: 2rem 0;
-  }
-
-  #registry-options {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    width: 80%;
-    grid-gap: 3rem;
-    margin: 5rem 0;
+    grid-gap: 2rem;
+    padding: 1rem 3rem;
   }
 
   #registry-options > span {
@@ -1631,22 +1619,6 @@ input[type="radio"] {
     align-self: center;
     margin: 0rem;
     color: rgba(0, 0, 0, 0.5);
-  }
-
-  .gift-option {
-    height: 100%;
-  }
-
-  .gift-option img {
-    margin: 1rem;
-    width: auto;
-    height: 8rem;
-    align-self: end;
-  }
-
-  .gift-option span {
-    margin-top: 2rem;
-    align-self: center;
   }
 
   .registry-btn {
@@ -1666,14 +1638,14 @@ input[type="radio"] {
     height: 50rem !important;
     width: 100%;
     object-fit: cover;
-    grid-row: 2;
+    grid-row: 1;
   }
 
   #rsvp-section .section-details {
     display: grid;
     justify-items: center !important;
     justify-content: center !important;
-    grid-row: 1 !important;
+    grid-row: 2 !important;
     grid-column: 1 !important;
     margin: 0;
     text-align: center !important;
@@ -1789,9 +1761,35 @@ input[type="radio"] {
   }
 
   #nav-title-area {
-
     margin-right: 0rem;
     margin-left: 10px;
+  }
+
+  #registry-options {
+    grid-template-rows: 1fr auto 1fr auto 1fr;
+    grid-template-columns: auto;
+  }
+
+  .gift-option {
+    height: 100%;
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+  }
+
+  .gift-option img {
+    margin: 1rem;
+    margin-right: 2.5rem;
+    width: auto;
+    height: 4rem;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .gift-option span {
+    margin-top: 0rem;
+    align-self: center;
+    text-align: left;
   }
 }
 
@@ -1813,7 +1811,7 @@ input[type="radio"] {
     grid-template-rows: auto auto auto;
     grid-row: 1/3;
     margin-bottom: 0.35rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
 
   #nav-title-area > a {

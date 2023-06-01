@@ -174,7 +174,7 @@ function scrollToRSVP() {
 
 // Scrolls to RSVP anchor when submitted
 function scrollToSection() {
-  const target = document.getElementById("rsvp-section");
+  const target = document.getElementById("rsvp-anchor");
   const headerHeight = document.querySelector("#nav-area").offsetHeight;
   const targetPos =
     target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
