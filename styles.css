@@ -2,11 +2,13 @@
   --main-bg-color: rgba(255, 252, 247);
   --secondary-bg-color: rgba(255, 253, 247, 0.6);
   --tertiary-bg-color: rgba(110, 75, 42, 0.02);
-  --tertiary-bg-color-hover: rgba(110, 75, 42, 0.05);
+  --tertiary-bg-color-hover: rgba(138, 108, 81, 0.035);
+  --tertiary-bg-color-hover-lighter: rgba(138, 108, 81, 0.03);
   --text-color: rgba(64, 58, 45);
   --link-color: rgba(107, 83, 55, 0.6);
   --active-color: rgba(0, 0, 0, 0.5);
   --transparent-color: rgba(64, 58, 45, 0);
+  --partially-transparent-color: rgba(64, 58, 45, 0.5);
   --dark-color: rgba(64, 58, 45);
   --button-color: rgb(233, 228, 221);
   --error-color: rgba(200, 0, 0);
@@ -346,7 +348,7 @@ html {
 }
 
 #jordan {
-  margin-bottom: -1.7rem;
+  margin-bottom: -0.7rem;
   margin-right: -0.75rem;
   z-index: 2;
 }
@@ -361,7 +363,7 @@ html {
 }
 
 #justice {
-  margin-bottom: -1.7rem;
+  margin-bottom: -0.7rem;
   margin-left: 0.5rem;
   z-index: 2;
 }
@@ -621,7 +623,7 @@ main {
   padding: 1rem 0rem;
   width: 100%;
   transition: 0.3s all;
-  border: 1px black solid;
+  border: 1px var(--partially-transparent-color) solid;
   background-color: var(--transparent-color);
   margin-top: 5rem;
 }
@@ -655,10 +657,6 @@ h1 {
   display: grid;
 }
 
-#rsvp-section .section-details {
-  margin-bottom: 0rem;
-}
-
 .left {
   background-color: var(--tertiary-bg-color);
 }
@@ -680,6 +678,7 @@ h1 {
   top: var(--header-height) !important;
   transition: 1s all;
   height: calc(100vh - var(--header-height)) !important;
+  width: 100%;
   object-fit: cover !important;
 }
 
@@ -734,46 +733,42 @@ h1 {
   margin-right: 0rem;
 }
 
-.left .section-details {
+.section-details {
   display: grid;
-  align-content: start;
-  justify-items: end;
-  grid-column: 1;
   grid-row: 1;
   margin: 0;
-  text-align: right;
   padding: 10rem 10rem;
-  margin-bottom: 0rem;
+  margin-bottom: 20rem;
+  align-content: start;
 }
 
-.left .section-desc {
+.left .section-details {
+  grid-column: 1;
+  text-align: right;
+  justify-items: end;
+}
+
+.right .section-details  {
+  grid-column: 2;
+  text-align: left;
+  justify-items: start;
+}
+
+.section-desc {
   font-family: "miller-text", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 2rem;
   line-height: 1.75;
   color: var(--text-color);
-  margin: 1.5rem 0 0 0;
+  margin: 1.5rem 0 0rem 0;
+}
+
+.left .section-desc {
   padding-left: 20%;
 }
 
-.right .section-details  {
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0;
-  padding: 10rem 10rem;
-  margin-bottom: 15rem;
-}
-
 .right .section-desc {
-  display: inline-block;
-  font-family: "miller-text", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  line-height: 2;
-  color: var(--text-color);
-  margin: 1.5rem 0 0rem 0;
   padding-right: 20%;
 }
 
@@ -809,84 +804,85 @@ h1 {
 #venue-menu-area {
   color: var(--text-color);
   padding-top: 3rem;
-  padding-right: 4rem;
-  padding-bottom: 3.5rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-bottom: 5rem;
   display: grid;
-  width: auto;
-  height: fit-content;
-  grid-template-rows: repeat(6, auto);
-  border-right: 1px var(--text-color) solid;
+  width: min(100%, 70rem);
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
 }
 
-#venue-menu-area h2 {
+.course {
+  display: grid;
+  height: fit-content;
+  background-color: var(--tertiary-bg-color-hover-lighter);
+  font-family: "miller-text";
+  justify-items: center;
+  align-items: start;
+  border-radius: 1rem;
+  text-align: center;
+  font-style: normal;
+  color: var(--text-color);
+  padding: 3rem;
+  padding-bottom: 3.5rem;
+  transition: 0.5s all;
+  gap: 2rem;
+}
+
+.course > h3 {
   font-family: "inglesa-caps-variable";
   font-weight: 400;
-  margin: 0;
   font-size: 3rem;
-  margin-bottom: 2rem;
-  justify-self: right;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-#venue-menu-area ul {
-  margin: 0;
-  text-align: right;
-}
-
-#venue-menu-area li {
-  display: flex;
-  justify-content: right;
-  font-family: "miller-headline", serif;
-  font-weight: 100;
+.course > span {
+  font-family: "miller-text", serif;
+  font-weight: 400;
   font-style: italic;
-  font-size: 2rem;
-}
-
-#venue-menu-area li:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
-
-#venue-menu-area ul:not(:last-child) {
-  margin-bottom: 6rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 1.6rem;
 }
 
 .indicator {
   color: var(--error-color) !important;
-  font-style: normal !important;
-  align-self: start !important;
-  font-size: 1.2rem !important;
-  border-radius: 50% !important;
-  margin-right: 0.75rem !important;
-  margin-top: 0.4rem !important;
+  opacity: 0.6;
+  font-style: normal;
+  font-family: "miller-text", serif;
+  font-size: 1.25rem;
+  position: relative;
+  top: 0.25rem;
 }
 
-#venue-dietary-legend {
+.course .indicator {
+  padding-left: 0.5rem;
+}
+
+.course .desserts-tbd {
+  font-size: 1.5rem;
+  opacity: 0.5;
+  margin-top: 1rem;
+}
+
+#dietary-legend {
+  grid-template-columns: auto auto auto auto;
   display: grid;
   grid-gap: 2rem;
 }
 
-#venue-dietary-legend .indicator {
-  align-self: center !important;
-  margin-right: 0.5rem !important;
-  margin-top: 0rem !important;
+#dietary-legend .indicator {
+  padding-right: 0.5rem;
 }
 
-#venue-dietary-legend > span {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-.dietary-title {
+#dietary-legend > span {
   color: var(--text-color);
   font-family: "miller-headline", serif;
-  font-weight: 300;
   font-style: italic;
   font-size: 1.5rem;
-}
-
-.menu-gap {
-  margin-right: 7rem !important;
 }
 
 .map-embed {
@@ -1015,7 +1011,7 @@ h1 {
   font-size: 3rem;
   padding: 1.5rem 3rem;
   transition: 0.3s all;
-  border: 1px black solid;
+  border: 1px var(--partially-transparent-color) solid;
   background-color: var(--transparent-color);
   justify-self: end;
   margin-top: 3rem;
@@ -1031,20 +1027,34 @@ h1 {
   transform: scale(0.95);
 }
 
-#faq-section .section-desc > h3 {
-  display: block;
-  font-style: italic;
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
+.faq-question {
+  border-right: 1px var(--text-color) solid;
+  padding-right: 1.75rem;
 }
 
-#faq-section .section-desc > span {
-  display: block;
+.faq-question:not(:last-child) {
   margin-bottom: 5rem;
+}
+
+#faq-section .section-desc h3 {
+  display: block;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  opacity: 0.65;
+  padding-top: 0.25rem;
+}
+
+#faq-section .section-desc span {
+  display: block;
+  font-size: 2rem;
+  padding-bottom: 1rem;
 }
 
 #rsvp-form {
   margin-top: 3.5rem;
+  width: min(100%, 70rem);
 }
 
 label {
@@ -1213,7 +1223,7 @@ input[type="radio"] {
   }
 
   #venue-dietary-legend {
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
   }
 }
 
@@ -1263,7 +1273,7 @@ input[type="radio"] {
 
   #jordan {
     margin-top: 0rem;
-    margin-bottom: 0rem;
+    margin-bottom: 0.6rem;
     margin-right: -0.8rem;
   }
 
@@ -1278,7 +1288,7 @@ input[type="radio"] {
 
   #justice {
     margin-top: 0rem;
-    margin-bottom: 0rem;
+    margin-bottom: 0.6rem;
     margin-left: 0.05rem;
   }
 
@@ -1314,7 +1324,7 @@ input[type="radio"] {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1.5rem;
-    margin: 0rem 0.5rem;
+    margin: 0rem 0rem;
   }
   
   #hero-section p {
@@ -1463,27 +1473,21 @@ input[type="radio"] {
   }
 
   #venue-menu-area {
-    padding: 0 !important;
-    margin: 7.5rem 0 !important;
-    border-right: 0px var(--text-color) solid !important;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    width: min(90vw, 1000px);
   }
 
-  #venue-menu-area h2 {
-    justify-self: center !important;
+  .course > h3 {
+    font-size: 3rem;
   }
 
-  #venue-menu-area ul {
-    text-align: center !important;
+  .course > span {
+    font-size: 1.625rem;
   }
 
-  #venue-menu-area li {
-    justify-content: center !important;
-  }
-
-  #venue-dietary-legend {
+  #dietary-legend {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     grid-gap: 2rem;
     margin-bottom: 2rem !important;
   }
@@ -1812,18 +1816,20 @@ input[type="radio"] {
   #nav-title-area > a {
     display: grid;
     justify-items: center;
+    margin-bottom: 0.65rem;
   }
 
   #jordan {
     font-size: 3rem;
     margin: 0;
+    margin-bottom: 1rem;
     padding: 0;
   }
 
   #ampersand {
     font-size: 4.25rem;
-    margin-top: -1.6rem;
-    margin-bottom: -1.75rem;
+    margin-top: -2.5rem;
+    margin-bottom: -1.25rem;
     padding: 0;
     color: rgba(64, 58, 45, 0.5);
   }
@@ -1831,6 +1837,7 @@ input[type="radio"] {
   #justice {
     font-size: 3rem;
     margin: 0;
+    margin-top: -1rem;
     padding: 0;
   }
 
