@@ -630,6 +630,19 @@ main {
   transform: scale(0.97);
 }
 
+.invisible-btn {
+  color: transparent;
+  border-color: transparent;
+  cursor: default;
+  pointer-events: none;
+}
+
+.invisible-btn:hover {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+
 h1 {
   font-family: "METROPOLIS";
   font-size: 6rem;
