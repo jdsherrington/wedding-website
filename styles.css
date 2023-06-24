@@ -253,6 +253,7 @@ html {
   content: "";
   position: absolute;
   left: 0;
+  bottom: 1;
   height: 1px;
   width: 225px;
   background-image: linear-gradient(
