@@ -631,6 +631,7 @@ main {
 }
 
 .invisible-btn {
+  background-color: transparent !important;
   color: transparent;
   border-color: transparent;
   cursor: default;
