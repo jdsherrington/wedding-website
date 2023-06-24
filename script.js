@@ -7,7 +7,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 (function () {
-  emailjs.init("_3jkFqETDzCUuDT9I");
+  emailjs.init("");
 })();
 
 // Site fade in and default RSVP form values set on page load
