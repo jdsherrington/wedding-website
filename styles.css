@@ -1135,6 +1135,7 @@ input[type="submit"] {
   padding: 1.5rem 3rem;
   transition: 0.3s all;
   border: 1px black solid;
+  color: var(--text-color);
   background-color: var(--transparent-color);
   margin: auto;
 }
@@ -1741,6 +1742,7 @@ input[type="radio"] {
     margin-top: 2rem;
     padding: 1.5rem 5.5rem;
     border-radius: 0.75rem;
+    color: var(--text-color);
     border: 0;
     background-color: var(--button-color);
   }
